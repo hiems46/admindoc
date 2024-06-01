@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>404 Error - SB Admin</title>
+        <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <button type="button" class="btn btn-info mb-4" data-bs-toggle="modal" data-bs-target="#myModal">
+            Tambah
+        </button>
+        <a class="edit" data-bs-toggle="modal" title="edit" data-bs-target="#ubah"><i class="fa fa-arrows-rotate"></i></a>
+        
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+    <script src="js/datatables-simple-demo.js"></script>    
+    
+    </body>
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+        <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Tambah Data Kirim DOC</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+  <form name="autoSumForm1" action="" method="post"
+            <!-- Modal body -->
+                    <div class="modal-body">
+                        <input type="text" name="nm_ptrnk" class="form-control mt-2" placeholder="Nama Peternak">
+                        <input type="text" name="almt_ptrnk" class="form-control mt-2" placeholder="Alamat Peternak">
+                        <input type="text" name="nohp_ptrnk" class="form-control mt-2" placeholder="No Hp Peternak">
+                        <input type="text" name="nm_brg" class="form-control mt-2" placeholder="Nama Barang">
+                        <input type="text" name="jml_box" class="form-control mt-2" placeholder="Jumlah Box" min="1" required>
+                        <input type="text" name="bns_ekor" class="form-control mt-2" placeholder="Bonus DOC" onFocus="startHit();" required>
+                        <input type="text" name="jml_ekor" class="form-control mt-2" placeholder="Jumlah DOC" min="1" onFocus="startHit();" onBlur="stopHit();" required>
+                        <input type="text" name="ttldoc" class="form-control mt-2" placeholder="Total" onchange="tryNumberFormat(this.form.thirdBox);" readonly>
+                        <input type="text" name="ket" class="form-control mt-2" placeholder="Keterangan">
+                    </div>
+                <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success" name="tambahsj">Tambah</button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+            </div>
+        </div>
+    </div>     
+  </form> 
+          <script type="text/javascript">
+              function startHit(){
+              interval = setInterval("hit()",1);}
+              function hit(){
+              y = document.autoSumForm1.bns_ekor.value;
+              z = document.autoSumForm1.jml_ekor.value;
+              document.autoSumForm1.ttldoc.value = (y*1)+(z*1);}
+              function stopHit(){
+              clearInterval(interval);}
+          </script>
+
+ <!-- The Modal -->
+ <div class="modal fade" id="ubah">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+    <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Ubah Data Kirim DOC</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+<form name="autoSumForm2" action="" method="post"
+        <!-- Modal body -->
+                <div class="modal-body">
+                    <input type="text" name="nm_ptrnk" class="form-control mt-2" placeholder="Nama Peternak">
+                    <input type="text" name="almt_ptrnk" class="form-control mt-2" placeholder="Alamat Peternak">
+                    <input type="text" name="nohp_ptrnk" class="form-control mt-2" placeholder="No Hp Peternak">
+                    <input type="text" name="nm_brg" class="form-control mt-2" placeholder="Nama Barang">
+                    <input type="text" name="jml_box" class="form-control mt-2" placeholder="Jumlah Box" min="1" required>
+                    <input type="text" name="bns_ekor" class="form-control mt-2" placeholder="Bonus DOC" onFocus="startCalc();" required>
+                    <input type="text" name="jml_ekor" class="form-control mt-2" placeholder="Jumlah DOC" min="1" onFocus="startCalc();" onBlur="stopCalc();" required>
+                    <input type="text" name="ttldoc" class="form-control mt-2" placeholder="Total" onchange="tryNumberFormat(this.form.thirdBox);" readonly>
+                    <input type="text" name="ket" class="form-control mt-2" placeholder="Keterangan">
+                </div>
+            <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success" name="tambahsj">Tambah</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+        </div>
+    </div>
+</div>     
+</form> 
+      <script type="text/javascript">
+          function startCalc(){
+          interval = setInterval("calc()",1);}
+          function calc(){
+          y = document.autoSumForm2.bns_ekor.value;
+          z = document.autoSumForm2.jml_ekor.value;
+          document.autoSumForm2.ttldoc.value = (y*1)+(z*1);}
+          function stopCalc(){
+          clearInterval(interval);}
+      </script>
+</html>
